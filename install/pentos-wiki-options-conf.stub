@@ -1,0 +1,13 @@
+# --------------------------------------------------
+# the following is added by PentOS Web
+# --------------------------------------------------
+# G3268BCP
+
+TraceEnable off
+ServerSignature	off
+ServerTokens	Prod
+
+# --------------------------------------------------
+# the above is added by PentOS Web
+# --------------------------------------------------
+

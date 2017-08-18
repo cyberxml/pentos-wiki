@@ -1,0 +1,7 @@
+  * Download the iso.
+  * Burn to USB.
+  * Boot to USB.
+  * Install
+  * Secure
+
+  * Install [[install:pentos|PentOS]]

@@ -1,0 +1,13 @@
+start
+wiki:site_notice
+wiki:navigation
+sidebar
+redhat_7_baseline
+install:centos7
+install:redhat
+install:redhat7
+install:fedora26
+install:install
+cookbook:infil:openconnect
+install:pentos
+cookbook:exfil:icmptunnel

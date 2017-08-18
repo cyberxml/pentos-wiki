@@ -1,0 +1,403 @@
+
+<p>
+CentOS with a collection of Penetration Tools
+</p>
+<hr />
+
+<p>
+Start Virtual Box Setup
+</p>
+<hr />
+
+<p>
+if installing in a VM, execute this section
+if installing to the host, skip to next section
+</p>
+
+<p>
+In the “Oracle VM VirtualBox Manager” window,
+</p>
+<pre class="code">   select: New</pre>
+
+<p>
+In “Create Virtual Machine” window,
+</p>
+<pre class="code">   in the &quot;Name&quot; field, enter: PentOS YYYYMMDD</pre>
+<pre class="code">   in the &quot;Type&quot; list, select: Linux</pre>
+<pre class="code">   in the &quot;Version&quot; list, select: Red Hat (64-bit)</pre>
+<pre class="code">   in the &quot;Memory size&quot; bar, select: 2048 MB</pre>
+<pre class="code">   in the &quot;Hard disk&quot; options, select &quot;Create a virtual hard disk now&quot;</pre>
+<pre class="code">   select the &quot;Create&quot; button</pre>
+
+<p>
+In the “Create Virtual Hard Disk” window,
+</p>
+<pre class="code">   in the &quot;File size&quot; bar, select 64.00 GB</pre>
+<pre class="code">   in the &quot;Hard disk file type&quot; options, select: VDI (VirtualBox Disk Image)</pre>
+<pre class="code">   in the &quot;Storage on physical hard disk&quot; options, select: Dynamically allocated</pre>
+<pre class="code">   select the &quot;Create&quot; button</pre>
+
+<p>
+In the “Oracle VM VirtualBox Manager” window,
+</p>
+<pre class="code">   select: Settings</pre>
+
+<p>
+In the “PentOS YYYYMMDD - Settings” windows,
+</p>
+<pre class="code">   from the left hand panel, select: Network</pre>
+<pre class="code">   In the right hand panel,</pre>
+<pre class="code">           verify that &quot;Adapter 1&quot; is enabled</pre>
+<pre class="code">           verify that &quot;Adapter 1&quot; is attached to &quot;NAT&quot;</pre>
+
+<p>
+In the “PentOS YYYYMMDD - Settings” windows,
+</p>
+<pre class="code">   from the left hand panel, select: Shared Folders</pre>
+<pre class="code">   from the right hand panel, right click on &quot;Machine folders&quot; and select &quot;Add Shared Folder&quot;</pre>
+
+<p>
+In the “Add Share” dialog,
+</p>
+<pre class="code">   Select a Folder Path (&quot;\Users\myuser\Downloads&quot;)</pre>
+<pre class="code">   Select a Folder Name: host</pre>
+<pre class="code">   Select: Automount</pre>
+<pre class="code">   Select: OK</pre>
+
+<p>
+In the “Oracle VM VirtualBox Manager” window,
+</p>
+<pre class="code">   select: Start</pre>
+
+<p>
+In the “Select start-up disk” dialog,
+</p>
+<pre class="code">   select the file browse icon</pre>
+
+<p>
+In the file browser, select: CentOS-7-x86_64-Everything-1511.iso
+</p>
+<pre class="code">   select the &quot;Open&quot; button</pre>
+
+<p>
+In the “Select start-up disk” dialog,
+</p>
+<pre class="code">   select the &quot;Start&quot; button</pre>
+<hr />
+
+<p>
+End Virtual Box Setup
+</p>
+<hr />
+<hr />
+
+<p>
+Start CentOS 7 Install
+</p>
+<hr />
+
+<p>
+In “WELCOME TO CENTOS 7” panel,
+</p>
+<pre class="code">   Select: English</pre>
+<pre class="code">   Select: English (United States)</pre>
+<pre class="code">   Select: Continue</pre>
+
+<p>
+In “INSTALLATION SUMMARY” panel.
+</p>
+<pre class="code">   Select &quot;Partioning&quot;</pre>
+
+<p>
+In the “INSTALLATION DESTINATION” panel
+</p>
+<pre class="code">   In &quot;Local Standard Disk&quot;, select appropriate disk</pre>
+<pre class="code">   In &quot;Partionioning&quot;, select &quot;I will configure&quot; option</pre>
+<pre class="code">   In &quot;Encryption&quot;, select &quot;Encrypt my data&quot;</pre>
+
+<p>
+In the “MANUAL PARTIONING” panel,
+</p>
+<pre class="code">   In the &quot;New CentOS 7 Installation&quot; dialog,</pre>
+<pre class="code">   Select &quot;+&quot;</pre>
+
+<p>
+In the “ADD A NEW MOUNT POINT” dialog,
+</p>
+<pre class="code">   enter one of the following rows for &quot;Mount Point&quot;</pre>
+<pre class="code">   enter the associated size for &quot;Desired Capacity&quot;</pre>
+<pre class="code">   select &quot;Add mount point&quot;</pre>
+<pre class="code">   32 GiB /</pre>
+<pre class="code">   08 GiB /home</pre>
+<pre class="code">   04 GiB /tmp</pre>
+<pre class="code">   04 GiB /var</pre>
+<pre class="code">   04 GiB /var/log</pre>
+<pre class="code">   04 GiB /var/log/audit&quot;</pre>
+<pre class="code">   01 GiB /boot (ext 4, no encryption)</pre>
+<pre class="code">   # note the following two will rename the mount points to &#039;BIOS Boot&#039; and &#039;swap&#039;</pre>
+<pre class="code">   02 MiB /boot (BIOS Boot file system, no encryption)</pre>
+<pre class="code">   08 GiB /swap (swap, encryption)</pre>
+
+<p>
+After completing the assignments, select “Done”
+</p>
+
+<p>
+In the “DISK ENCRYPTION PASSPHRASE” dialog,
+</p>
+<pre class="code">   enter a &quot;Passphrase&quot;</pre>
+<pre class="code">   confirm the passphrase</pre>
+<pre class="code">   select &quot;Save&quot;</pre>
+
+<p>
+After closing the encryption dialog,
+</p>
+<pre class="code">   Once again in the Manual Partioning panel,</pre>
+<pre class="code">   select &quot;Done</pre>
+
+<p>
+In the “SUMMARY OF CHANGES” dialog,
+</p>
+<pre class="code">   Select &quot;Accept Changes&quot;</pre>
+
+<p>
+In the “INSTALLATION SUMMARY” panel,
+</p>
+<pre class="code">   Select &quot;Software Selection&quot;</pre>
+
+<p>
+In the “SOFTWARE SELECTION” panel.
+</p>
+<pre class="code">   In &quot;Base Environment,&quot; Select &quot;Development and Creative Workstation&quot;</pre>
+<pre class="code">   In &quot;Add-Ons for Selected Environment&quot;, select the following options</pre>
+<ol>
+<li class="level1"><div class="li"> Additional Development</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Compatability Libraries</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Development Tools</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> File and Storage Server</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Graphics Creation Tools</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Legacy X Windows System Compatibilities</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Network File System Client</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Office Suite and Productivity</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> PHP Support</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Perl for Web</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Platform Development</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Python</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Security Tools</div>
+</li>
+</ol>
+
+<p>
+When all &#039;Add-Ons&#039; are selected, select “Done”
+</p>
+
+<p>
+In the “Installation Summary” panel, select “Begin Installation”
+</p>
+
+<p>
+In the “CONFIGURATION” panel, select “ROOT PASSWORD”
+</p>
+
+<p>
+In the “Root Password” panel,
+</p>
+<pre class="code">   enter a &#039;root&#039; password</pre>
+<pre class="code">   confirm the password</pre>
+<pre class="code">   select Done</pre>
+
+<p>
+In the “CONFIGURATION” panel, select “USER CREATION”
+</p>
+<pre class="code">   Select &quot;Create User&quot;</pre>
+<pre class="code">   Enter a Full Name: Penne Pasta</pre>
+<pre class="code">   Enter a User name: penne</pre>
+<pre class="code">   Select &quot;Make this user an administrator&quot;</pre>
+<pre class="code">   Select &quot;Require a password for this account&quot;</pre>
+<pre class="code">   Enter a Password</pre>
+<pre class="code">   Confirm the Password</pre>
+<pre class="code">   (note advanced options here, for now leave alone)</pre>
+<pre class="code">   Select &quot;Done&quot;</pre>
+
+<p>
+After the software installation completes,
+</p>
+<pre class="code">   select &quot;Reboot&quot;</pre>
+
+<p>
+#####—————————
+Initial Setup
+</p>
+
+<p>
+#####—————————
+</p>
+
+<p>
+As the system powers up, enter the disk encryption password when prompted.
+</p>
+
+<p>
+In the “INITIAL SETUP” panel,
+</p>
+<pre class="code">   Select &quot;LICENSE INFORMATION&quot;</pre>
+
+<p>
+In the “LICENSE INFORMATION” panel,
+</p>
+<pre class="code">   Select &quot;I accept the license agreement&quot; option</pre>
+<pre class="code">   Select &quot;Done&quot;</pre>
+
+<p>
+In the “INITIAL SETUP” panel,
+</p>
+<pre class="code">   Select &quot;NETWORK &amp; HOST NAME&quot;</pre>
+
+<p>
+In the “NETWORK &amp; HOST NAME” panel,
+</p>
+<pre class="code">   Select &quot;Ethernet (enp0s3)</pre>
+<pre class="code">   Select &quot;Configure&quot;</pre>
+
+<p>
+In the “Editing enp0s3” dialog,
+</p>
+<pre class="code">   In the &quot;General&quot; tab, select &quot;Automatically connect to this network when it is available&quot;</pre>
+<pre class="code">   Select &quot;Save&quot;</pre>
+
+<p>
+In the “NETWORK &amp; HOST NAME” panel,
+</p>
+<pre class="code">   Select &quot;Done&quot;</pre>
+
+<p>
+In the “INITIAL SETUP” panel,
+</p>
+<pre class="code">   Select &quot;Finish Configuration&quot;</pre>
+
+<p>
+#####—————————
+Login as Penne
+</p>
+
+<p>
+#####—————————
+</p>
+
+<p>
+Login as “Penne Pasta”
+</p>
+
+<p>
+In the “Welcome” window,
+</p>
+<pre class="code">   Select &quot;Next&quot;</pre>
+
+<p>
+In the “Typing” window,
+</p>
+<pre class="code">   Select &quot;Next&quot;</pre>
+
+<p>
+In the “Online Accounts” window,
+</p>
+<pre class="code">   Select &quot;Skip&quot;</pre>
+
+<p>
+In the “Ready to Go” window,
+</p>
+<pre class="code">   Select &quot;Start using CentOS Linux&quot;</pre>
+
+<p>
+In the “Getting Started” window,
+</p>
+<pre class="code">   select the small [x] in the upper right hand corner to close.</pre>
+
+<p>
+From the top panel Menu bar,
+</p>
+<pre class="code">   Select: Applications &gt; System Tools &gt; Software Update</pre>
+<pre class="code">   After the software list is updated, select &quot;Install Updates&quot;</pre>
+<pre class="code">   Trust the source of the key</pre>
+<pre class="code">   Enter the root password</pre>
+
+<p>
+When software updates are complete, select “Quit”
+</p>
+
+<p>
+Reboot
+</p>
+
+<p>
+#####—————————
+Configure VM Guest
+</p>
+
+<p>
+#####—————————
+</p>
+
+<p>
+If you are running in a VM, now is a good time to install “Guest Additions”
+</p>
+<pre class="code">   Insert &quot;Guest Addition&quot; ISO (via menu options)</pre>
+<pre class="code">   Select &quot;Run&quot; to run the software</pre>
+<pre class="code">   Enter the root password</pre>
+<pre class="code">   Close the window.</pre>
+
+<p>
+Eject the ISO
+</p>
+
+<p>
+Reboot
+</p>
+
+<p>
+In the VM Devices, select “Shared Clipboard - Bidirectional”
+</p>
+
+<p>
+If you are running in a VM, now is a good time to take a snapshot
+</p>
+
+<p>
+When ready, continue to <a href="/wiki/doku.php?id=install:pentos" class="wikilink1" title="install:pentos">Install PentOS</a>
+</p>

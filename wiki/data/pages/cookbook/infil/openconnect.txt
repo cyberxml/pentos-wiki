@@ -1,0 +1,7 @@
+In one assessment, we were given credentials and an URL to a VPN gateway. The connection was initially established through a web browser which indicated it needed Java and/or Active X to configure the connection. but this only worked on certain Windows hosts.
+
+We were able to establish valid VPN tunnels on Linux boxes by using //openconnect// with a '--juniper' flag. Openconnect acts as an HTTP client, reading the http responses, prompting for the information required in forms, and sending it all back. This worked for this connection.
+
+<code>
+openconnect --juniper https://example.com/servicename
+</code>

@@ -1,0 +1,28 @@
+Login as 'penne'
+
+Open a terminal window
+
+     enter: su -
+     
+     enter the root password
+     
+     enter: cd /opt
+     
+     enter: git clone http://github.com/cyberxml/pentos
+     
+     enter: cd /opt/pentos/build
+
+From the /opt/pentos/build directory, run the following
+
+    ./pentos-build-1-env.sh
+    
+    ./pentos-build-2-base.sh
+    
+    ./pentos-build-3-epel.sh
+    
+    ./pentos-build-4-rpm.sh
+    
+    ./pentos-build-5-pip.sh
+    
+    ./pentos-build-6-manual.sh
+

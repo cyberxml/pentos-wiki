@@ -1,0 +1,14 @@
+There are three basic stages in installing a PentOS platform.
+
+  - Install Base Operating System
+    * [[install:redhat7|Red Hat 7]]
+    * [[install:centos7|CentOS 7]]
+    * [[install:fedora26|Fedora 26]]
+  - Install PentOS Security Tools
+    * [[install:pentos|PentOS]] Security Tools
+  - Install Optional Components
+    * [[install:pentos-wiki|PentOS Wiki]] Portable PentOS Wiki
+    * [[install:pentos-sdr|PentOS SDR]] PentOS Wireless/SDR 
+
+Some basic functionality of the PentOS platform can be validated by running throught the Metasploitable 2 walkthrough
+  * [[metasploit2:metasploit2:|Metasploitable 2]]

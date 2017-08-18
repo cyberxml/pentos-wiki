@@ -1,0 +1,24 @@
+# --------------------------------------------------
+# the following is added by PentOS Wiki
+# --------------------------------------------------
+# G3268BCP
+
+
+<LocationMatch "^/wiki/(data|conf|bin|inc)/">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</LocationMatch>
+
+## make sure nobody gets the htaccess, README, COPYING or VERSION files
+<LocationMatch "^/wiki/([\._]ht|README$|VERSION$|COPYING$)">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</LocationMatch>
+
+
+# --------------------------------------------------
+# the above is added by PentOS Wiki
+# --------------------------------------------------
+

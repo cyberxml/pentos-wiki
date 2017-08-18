@@ -1,0 +1,39 @@
+1503084184	127.0.0.1	C	start	admin	created		11
+1503084614	127.0.0.1	C	wiki:site_notice	admin	created		42
+1503084758	127.0.0.1	C	wiki:navigation	admin	created		151
+1503084796	127.0.0.1	E	wiki:navigation	admin			16
+1503084843	127.0.0.1	E	wiki:navigation	admin			24
+1503086040	127.0.0.1	C	sidebar	admin	created		4
+1503086069	127.0.0.1	E	sidebar	admin			174
+1503086222	127.0.0.1	E	sidebar	admin			143
+1503086924	127.0.0.1	E	sidebar	admin			558
+1503087606	127.0.0.1	E	start	admin			647
+1503087935	127.0.0.1	E	sidebar	admin			28
+1503087988	127.0.0.1	C	redhat_7_baseline	admin	created		71
+1503088051	127.0.0.1	C	install:centos7	admin	created		93
+1503088085	127.0.0.1	E	install:centos7	admin			20
+1503088101	127.0.0.1	E	install:centos7	admin			2
+1503088115	127.0.0.1	E	install:centos7	admin			-10
+1503088127	127.0.0.1	E	install:centos7	admin			12
+1503088157	127.0.0.1	D	wiki:navigation	admin	removed		-191
+1503088253	127.0.0.1	E	sidebar	admin			115
+1503088312	127.0.0.1	D	redhat_7_baseline	admin	removed		-71
+1503088325	127.0.0.1	C	install:redhat	admin	created		71
+1503088367	127.0.0.1	E	sidebar	admin			4
+1503088378	127.0.0.1	C	install:redhat7	admin	created		71
+1503088389	127.0.0.1	D	install:redhat	admin	removed		-71
+1503088427	127.0.0.1	C	install:fedora26	admin	created		117
+1503088885	127.0.0.1	C	install:install	admin	created		609
+1503089139	127.0.0.1	E	sidebar	admin			316
+1503089378	127.0.0.1	E	sidebar	admin			0
+1503089488	127.0.0.1	E	sidebar	admin			95
+1503089523	127.0.0.1	E	sidebar	admin			0
+1503089872	127.0.0.1	C	cookbook:infil:openconnect	admin	created		544
+1503089945	127.0.0.1	E	cookbook:infil:openconnect	admin			66
+1503090117	127.0.0.1	E	sidebar	admin			0
+1503090140	127.0.0.1	E	start	admin			12
+1503090160	127.0.0.1	E	start	admin			2
+1503090203	127.0.0.1	E	install:install	admin			1
+1503090483	127.0.0.1	C	install:pentos	admin	created		478
+1503090587	127.0.0.1	E	install:centos7	admin			6810
+1503094589	127.0.0.1	C	cookbook:exfil:icmptunnel	admin	created		16
