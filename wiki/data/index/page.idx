@@ -11,3 +11,5 @@ install:install
 cookbook:infil:openconnect
 install:pentos
 cookbook:exfil:icmptunnel
+cookbook:exfil:iodine
+cookbook:exfil:corkscrew

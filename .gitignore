@@ -3,4 +3,5 @@
 *.old
 *~
 *.DS_Store
-data/cache/*
+wiki/data/cache/*
+users.auth.php

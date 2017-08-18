@@ -37,3 +37,7 @@
 1503090483	127.0.0.1	C	install:pentos	admin	created		478
 1503090587	127.0.0.1	E	install:centos7	admin			6810
 1503094589	127.0.0.1	C	cookbook:exfil:icmptunnel	admin	created		16
+1503095132	127.0.0.1	E	start	admin			237
+1503095144	127.0.0.1	E	start	admin			4
+1503095217	127.0.0.1	C	cookbook:exfil:iodine	admin	created		6
+1503095229	127.0.0.1	C	cookbook:exfil:corkscrew	admin	created		9
