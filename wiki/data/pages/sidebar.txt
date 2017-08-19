@@ -6,6 +6,7 @@
     * [[install:pentos|Pentos Installation]]
     * [[install:pentos-wiki|Pentos Wiki Installation]]
     * [[install:pentos-sdr|Pentos SDR Installation]]
+  * [[collab:sabre|Sabre]]
   * [[cookbook:cookbook|Cookbook]]
     * [[cookbook:infil:infil|Infiltration]]
       * [[cookbook:infil:openconnect|Juniper VPN]]

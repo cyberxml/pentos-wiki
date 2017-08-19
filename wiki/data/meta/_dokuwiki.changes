@@ -41,3 +41,15 @@
 1503095144	127.0.0.1	E	start	admin			4
 1503095217	127.0.0.1	C	cookbook:exfil:iodine	admin	created		6
 1503095229	127.0.0.1	C	cookbook:exfil:corkscrew	admin	created		9
+1503097926	127.0.0.1	E	sidebar	admin			27
+1503098258	127.0.0.1	C	collab:sabre	admin	created		609
+1503098324	127.0.0.1	E	collab:sabre	admin			64
+1503098348	127.0.0.1	E	collab:sabre	admin	[Commands and Keyboard Shortcuts] 		-6
+1503162096	127.0.0.1	C	cookbook:infil:proxychains	admin	created		951
+1503162583	127.0.0.1	C	cookbook:infil:ssh_dynamic_forward	admin	created		776
+1503162604	127.0.0.1	E	cookbook:infil:ssh_dynamic_forward	admin			-5
+1503162642	127.0.0.1	E	cookbook:infil:ssh_dynamic_forward	admin	[Configuration] 		-1
+1503162919	127.0.0.1	E	cookbook:infil:proxychains	admin	[Configuration] 		267
+1503162948	127.0.0.1	E	cookbook:infil:proxychains	admin	[Configuration] 		34
+1503162979	127.0.0.1	E	cookbook:infil:proxychains	admin			1
+1503163005	127.0.0.1	E	cookbook:infil:proxychains	admin	[Example Usage] 		0

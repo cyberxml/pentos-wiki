@@ -1,0 +1,35 @@
+====== Proxy Chains ======
+
+===== Introduction =====
+
+Establish a [[cookbook:infil:ssh_dynamic_forward|SOCKS SSH Dynamic Port Forwarder]] ("//ssh -D 127.0.01:9999//") to another server. 
+
+You can connect to this forwarder with almost any tool by wrapping it in //proxychains// command.
+
+This allows you to tunnel various network tools through an open port on a router. Ports such as 53, 80, or 3389.
+
+===== Installation =====
+
+The //proxychains// utility is preinstalled on PentOS. The command line wrapper is '//proxychains4//'
+
+===== Configuration =====
+
+Add the proxy listener defined by the [[cookbook:infil:ssh_dynamic_forward|SSH -D Dynamic Forwarding]] to the proxy list in the /etc/proxychain.conf file
+
+<code>
+strict_chain
+proxy_dns 
+remote_dns_subnet 224
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4 		127.0.0.1 9999
+</code>
+===== Example Usage =====
+
+Run nmap through the proxychain as follows. The '//-q//' flag suppresses output from the proxychains command making it easier to read the nmap output. The //'sT//' flag enforces TCP only as the proxychain does not handle UDP traffic. This should be noted when using for DNS, SMB, or NFS traffic.
+
+<code>
+proxychains4 -q nmap -sT -n --top-ports 1000 10.1.1.1
+</code>
+

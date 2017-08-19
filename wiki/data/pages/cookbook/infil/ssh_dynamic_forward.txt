@@ -1,0 +1,20 @@
+====== SSH -D Dynamic Forwarding (SOCKS) ======
+
+
+===== Introduction =====
+
+You can create a SOCKS proxy using the SSH '//-D//' option which creates a dynamic port forwarder on the given host. Typically, this is created on the localhost to forward to a remote server.
+
+===== Installation =====
+
+No installation is necessary as the standard SSH client has all the functionality required.
+
+===== Configuration ===== 
+
+The configuration can be as simple as including the '//-D//' option on the command line. The option takes an IP and a port number as arguments. To function properly, the login session on the remote server must have permissions to access network ports on that remote server.
+
+===== Example Usage ===== 
+
+<code>
+ssh -D 127.0.0.1:9999 root@10.1.1.1
+</code>
