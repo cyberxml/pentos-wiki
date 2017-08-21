@@ -26,6 +26,7 @@
       * [[cookbook:exfil:icmptunnel|TCP over ICMP]]
       * [[cookbook:exfil:iodine|TCP over DNS]]
       * [[cookbook:exfil:corkscrew|TCP through HTTP Proxy]]
+      * [[cookbook:exfil:udp_tcp|UDP through TCP]]
     * [[sdr:sdr|ELINT]]
       * [[sdr:gqrx|gqrx]]
       * [[sdr:gnss|GNSS (GPS)]]

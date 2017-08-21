@@ -10,4 +10,5 @@ wiki/conf/plugins.local.php
 wiki/conf/local.php
 wiki/data/index/*
 wiki/data/cache/*
+*lock
 

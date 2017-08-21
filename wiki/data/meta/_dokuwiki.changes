@@ -75,3 +75,5 @@
 1503261120	127.0.0.1	E	install:centos7	admin			490
 1503261145	127.0.0.1	E	install:centos7	admin			1
 1503261503	127.0.0.1	E	install:centos7	admin			62
+1503357087	192.168.1.108	E	navigationmenu	admin			51
+1503357312	192.168.1.108	C	cookbook:exfil:udp_tcp	admin	created		801

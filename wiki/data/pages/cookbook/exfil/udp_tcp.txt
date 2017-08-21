@@ -1,0 +1,28 @@
+====== Udp2raw-tunnel ======
+
+===== Introduction =====
+
+A UDP Tunnel which tunnels UDP via FakeTCP/UDP/ICMP Traffic by using Raw Socket,helps you Bypass UDP FireWalls(or Unstable UDP Environment).Its Encrpyted,Anti-Replay and Multiplexed.It aslo acts as a Connection Stablizer.
+
+===== Installation =====
+
+Releases: https://github.com/wangyu-/udp2raw-tunnel/releases
+
+<code>
+git clone https://github.com/wangyu-/udp2raw-tunnel
+</code>
+
+===== Configuration =====
+
+===== Example Usage =====
+
+<code># Run at server side:
+./udp2raw_amd64 -s -l0.0.0.0:4096 -r 127.0.0.1:7777  -a -k "passwd" --raw-mode faketcp
+</code>
+<code>
+# Run at client side
+./udp2raw_amd64 -c -l0.0.0.0:3333  -r44.55.66.77:4096 -a -k "passwd" --raw-mode faketcp
+</code>
+
+===== Reference =====
+https://github.com/wangyu-/udp2raw-tunnel
