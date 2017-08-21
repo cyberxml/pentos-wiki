@@ -1,0 +1,30 @@
+====== SABRE: A Production of Wild West Space Enterprises ======
+
+===== Introduction =====
+
+Sabre is a client/server tool enabling collaborative teamwork during a Red Team engagement. It includes a chat feature and a terminal for sharing work through the use of UNIX 'screens'
+
+===== Server Setup =====
+
+Got to have a Server. Ubuntu rules the roost.
+
+===== Client Setup =====
+
+Got to have clients. 
+
+==== Ubuntu/Kali ====
+
+Who doesn't love Kali?
+
+==== PentOS ====
+
+Show the love!
+
+===== Commands and Keyboard Shortcuts =====
+
+    Type exit. 
+    You now have a root command prompt
+===== Workflow Example =====
+
+    Working on the railroad.
+    All the live long day.

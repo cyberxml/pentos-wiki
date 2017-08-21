@@ -1,13 +1,11 @@
-a:2:{s:7:"current";a:8:{s:4:"date";a:2:{s:7:"created";i:1503088051;s:8:"modified";i:1503090587;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503090587;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:15:"install:centos7";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:6810;}s:11:"contributor";a:1:{s:5:"admin";s:13:"Administrator";}s:8:"relation";a:2:{s:10:"references";a:1:{s:14:"install:pentos";b:1;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:11:"description";a:1:{s:8:"abstract";s:253:"CentOS with a collection of Penetration Tools
-
-----------
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1503088051;s:8:"modified";i:1503261503;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503261503;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:15:"install:centos7";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:62;}s:11:"contributor";a:1:{s:5:"admin";s:13:"Administrator";}s:5:"title";s:32:"CentOS Configuration and Install";s:11:"description";a:2:{s:15:"tableofcontents";a:6:{i:0;a:4:{s:3:"hid";s:32:"centos_configuration_and_install";s:5:"title";s:32:"CentOS Configuration and Install";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:23:"start_virtual_box_setup";s:5:"title";s:23:"Start Virtual Box Setup";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:22:"start_centos_7_install";s:5:"title";s:22:"Start CentOS 7 Install";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:18:"first_reboot_setup";s:5:"title";s:18:"First Reboot Setup";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:4;a:4:{s:3:"hid";s:18:"post_install_login";s:5:"title";s:18:"Post Install Login";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:5;a:4:{s:3:"hid";s:18:"configure_vm_guest";s:5:"title";s:18:"Configure VM Guest";s:4:"type";s:2:"ul";s:5:"level";i:2;}}s:8:"abstract";s:252:"CentOS Configuration and Install
 
 Start Virtual Box Setup
 
-----------
-
 if installing in a VM, execute this section
+
 if installing to the host, skip to next section
 
 In the “Oracle VM VirtualBox Manager” window,
-   select: New";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1503088051;s:8:"modified";i:1503090587;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503090587;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:15:"install:centos7";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:6810;}s:11:"contributor";a:1:{s:5:"admin";s:13:"Administrator";}}}
+   select: New
+In “Name and Operating System”";}s:8:"relation";a:2:{s:10:"references";a:1:{s:14:"install:pentos";b:1;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1503088051;s:8:"modified";i:1503261503;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503261503;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:15:"install:centos7";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:62;}s:11:"contributor";a:1:{s:5:"admin";s:13:"Administrator";}}}

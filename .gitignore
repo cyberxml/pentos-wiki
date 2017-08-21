@@ -4,4 +4,10 @@
 *~
 *.DS_Store
 wiki/data/cache/*
-users.auth.php
+wiki/conf/users.auth.php
+wiki/conf/acl.auth.php
+wiki/conf/plugins.local.php
+wiki/conf/local.php
+wiki/data/index/*
+wiki/data/cache/*
+

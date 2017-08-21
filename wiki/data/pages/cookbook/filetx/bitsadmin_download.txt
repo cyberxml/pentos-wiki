@@ -1,0 +1,23 @@
+====== Windows Bitsadmin Downloads ======
+
+===== Introduction =====
+
+Using Windows Bitsadmin for downloads uses a native Windows tools to pull down files to the local Windows hosts. The tool was created for background downloads and will likely run slower than other file transfer methods.
+
+===== Installation =====
+
+As a native Windows utility, no download is necessary
+
+===== Configuration =====
+
+No configuration is required. You can run //bitsadmin// from the command line.
+
+===== Example Usage =====
+
+<code>
+bitsadmin /transfer mydljob /priority high http://example.com/examplefile.pdf C:\temp\examplefile.pdf
+</code>
+
+===== Reference =====
+
+http://codingsec.net/201606/download-file-using-command-line/
