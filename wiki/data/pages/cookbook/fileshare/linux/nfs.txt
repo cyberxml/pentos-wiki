@@ -1,0 +1,19 @@
+====== Introduction ======
+NFS is a common network file sharing (NFS) protocol used mostly from UNIX servers but also supported by many SAN/NAS systems as well as the UNIX system on Windows.
+
+You can find NFS systems by noting port 111 open on a server. This port serves as a traffic director for multiple RPC protocols of which NFS is only one. Therefore an open port 111 indicates that NFS may be running, but does not guarantee that it is. You can use the //showmount// command to identify open NFS shares. //Metasploit// and //nmap// also have modules to enumerate NFS shares.
+===== Installation =====
+
+===== Configuration =====
+
+===== Example Usage =====
+The //"-o ro"// flag is to mount the network share as read-only. This should always be the default during an engagement. However, one can use the network share to move files from one system to another. One can also inject ssh certificates onto user home directories to gain access to remote systems. In cases where writing to the network share is desirable, just leave the option out of the command.
+
+<code>
+showmount -e 10.1.1.1 
+mkdir /tmp/redmnt
+mount -o ro 10.1.1.1:/somemnt /tmp/redmnt/somemnt
+</code>
+
+===== Reference =====
+

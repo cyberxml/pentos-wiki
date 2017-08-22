@@ -1,0 +1,70 @@
+====== Arpspoof ======
+
+In this tutorial we are going to perform the man in the middle attack using Kali Linux.
+
+===== Configuration =====
+
+The man-in-the-middle attack (often abbreviated MITM, MitM, MIM, MiM, MITMA) in cryptography and computer security is a form of active eavesdropping in which the attacker makes independent connections with the victims and relays messages between them, making them believe that they are talking directly to each other over a private connection, when in fact the entire conversation is controlled by the attacker.
+
+Victim IP address : 192.168.8.90
+
+Attacker network interface : eth0; with IP address : 192.168.8.93
+
+Router IP address : 192.168.8.8
+
+Packet forwarding must be enabled
+===== Requirements =====
+
+1. Arpspoof
+
+2. Driftnet
+
+3. Urlsnarf
+
+===== Example Usage =====
+
+Step by step Kali Linux Man in the Middle Attack :
+
+1. Open your terminal (CTRL + ALT + T kali shortcut) and configure our Kali Linux machine to allow packet forwarding, because act as man in the middle attacker, Kali Linux must act as router between “real router” and the victim. Read the tutorial here how to set up packet forwarding in linux.
+
+2. You can change your terminal interface to make the view much more friendly and easy to monitor by splitting kali linux terminal window.
+
+3. The next step is setting up //arpspoof// between victim and router.
+
+<code>arpspoof -i eth0 -t 192.168.8.90 192.168.8.8</code>
+
+{{cookbook:mitm:kali-mitm2.jpg}}
+
+4. And then setting up //arpspoof// from to capture all packet from router to victim.
+
+<code>arpspoof -i eth0 192.168.8.8 192.168.8.90</code>
+
+{{cookbook:mitm:kali-mitm3.jpg}}
+
+5. After step three and four, now all the packet sent or received by victim should be going through attacker machine.
+
+6. Now we can try to use //driftnet// to monitor all victim image traffic. According to its website,
+
+    //Driftnet// is a program which listens to network traffic and picks out images from TCP streams it observes. Fun to run on a host which sees lots of web traffic.
+
+7. To run driftnet, we just run this
+
+<code>driftnet -i eth0</code>
+
+When victim browse a website with image, //driftnet// will capture all image traffic as shown in the screenshot below.
+
+To stop //driftnet//, just close the //driftnet// window or press CTRL + C in the terminal
+
+8. For the next step we will try to capture the website information/data by using //urlsnarf//. To use //urlsnarf//, just run this code
+
+<code>urlsnarf -i eth0</code>
+
+and //urlsnarf// will start capturing all website address visited by victim machine.
+
+9. When victim browse a website, attacker will know the address victim visited.
+
+{{cookbook:mitm:kali-mitm5.jpg}}
+
+===== Reference =====
+
+https://codingsec.net/2016/08/perform-man-middle-attack-kali-linux/

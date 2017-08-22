@@ -77,3 +77,17 @@
 1503261503	127.0.0.1	E	install:centos7	admin			62
 1503357087	192.168.1.108	E	navigationmenu	admin			51
 1503357312	192.168.1.108	C	cookbook:exfil:udp_tcp	admin	created		801
+1503409042	192.168.1.108	E	navigationmenu	admin			177
+1503409551	192.168.1.108	C	cookbook:filetx:linux:nfs	admin	created		1191
+1503409615	192.168.1.108	E	navigationmenu	admin			105
+1503409644	192.168.1.108	D	cookbook:filetx:linux:nfs	admin	removed		-1191
+1503409655	192.168.1.108	C	cookbook:fileshare:linux:nfs	admin	created		1191
+1503409719	192.168.1.108	E	navigationmenu	admin			-11
+1503411953	192.168.1.108	E	navigationmenu	admin			87
+1503412234	192.168.1.108	C	cookbook:mitm:arp	admin	created		2672
+1503412255	192.168.1.108	E	cookbook:mitm:arp	admin	[Example Usage] 		1
+1503412312	192.168.1.108	E	cookbook:mitm:arp	admin	[Example Usage] 		30
+1503412332	192.168.1.108	E	cookbook:mitm:arp	admin	[Configuration] 		34
+1503412712	192.168.1.108	E	cookbook:mitm:arp	admin	[Example Usage] 		9
+1503412777	192.168.1.108	E	cookbook:mitm:arp	admin			9
+1503412808	192.168.1.108	E	cookbook:mitm:arp	admin	[Example Usage] 		20
