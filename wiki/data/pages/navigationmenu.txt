@@ -20,6 +20,7 @@
         * [[cookbook:enum:windows:whoami|Whoami (groups)]]
     * [[cookbook:privs:privs|Escalation]]
     * [[cookbook:web:web|Web]]
+      * [[cookbook:web:sqlmap|SQLmap]]
     * [[cookbook:db:db|Database]]
     * [[cookbook:filetx:fileshare|File Sharing]]
       * [[cookbook:fileshare:linux|Linux]]

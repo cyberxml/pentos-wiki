@@ -41,3 +41,6 @@
 1503797886	127.0.0.1	E	navigationmenu	admin			0
 1503798236	127.0.0.1	E	navigationmenu	admin			66
 1503798397	127.0.0.1	C	ctf:re:re	admin	created		195
+1503799731	127.0.0.1	E	navigationmenu	admin			39
+1503800351	127.0.0.1	C	cookbook:web:sqlmap	admin	created		12986
+1503800430	127.0.0.1	E	cookbook:web:sqlmap	admin			-48

