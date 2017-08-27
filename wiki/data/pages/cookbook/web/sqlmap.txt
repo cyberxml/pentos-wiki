@@ -48,7 +48,7 @@ Google dorks put corporate information at risk because they unwittingly create b
 
 Google Dorks strings to find Vulnerable SQLMAP SQL injectable website:
 
-== Step 1: Initial check to confirm if website is vulnerable to SQLMAP SQL Injection ==
+==== Step 1: Initial check to confirm if website is vulnerable to SQLMAP SQL Injection ====
 
 For every string show above, you will get huundreds of search results. How do you know which is really vulnerable to SQLMAP SQL Injection. There’s multiple ways and I am sure people would argue which one is best but to me the following is the simplest and most conclusive.
 
@@ -66,7 +66,7 @@ If the page returns an SQL error, the page is vulnerable to SQLMAP SQL Injection
 
 See example error below in the screenshot. I’ve obscured everything including URL and page design for obvious reasons.
 
-img sqli-1
+{{:cookbook:web:sqli-1.jpg|}}
 
 Examples of SQLi Errors from Different Databases and Languages
 
@@ -94,7 +94,7 @@ PostgreSQL Errors
 Query failed: ERROR: unterminated quoted string at or near “‘’’”
 </code>
 
-== Step 2: List DBMS databases using SQLMAP SQL Injection: ==
+==== Step 2: List DBMS databases using SQLMAP SQL Injection: ====
 
 As you can see from the screenshot above, I’ve found a SQLMAP SQL Injection vulnerable website. Now I need to list all the databases in that Vulnerable database. (this is also called enumerating number of columns). As I am using SQLMAP, it will also tell me which one is vulnerable.
 
@@ -109,7 +109,7 @@ sqlmap   =     Name of sqlmap binary file
 
 See screenshot below.
 
-img sqli-2
+{{:cookbook:web:sqli-2.jpg|}}
 
 This commands reveals quite a few interesting info:
 <code>
@@ -123,7 +123,7 @@ back-end DBMS: MySQL 5.0
 
 So, we now have two database that we can look into. information_schema is a standard database for almost every MYSQL database. So our interest would be on clemcoindustries database.
 
-== Step 3: List tables of target database using SQLMAP SQL Injection: ==
+==== Step 3: List tables of target database using SQLMAP SQL Injection: ====
 
 Now we need to know how many tables this clemcoindustries database got and what are their names. To find out that information, use the following command:
 
@@ -144,11 +144,12 @@ this database got 8 tables.
 [10:56:39] [INFO] retrieved: popular_tag
 [10:56:42] [INFO] retrieved: user_info
 </code>
-img sqli-3
+
+{{:cookbook:web:sqli-3.jpg|}}
 
 and of course we want to check whats inside user_info table using SQLMAP SQL Injection as that table probably contains username and passwords.
 
-== Step 4: List columns on target table of selected database using SQLMAP SQL Injection: ==
+==== Step 4: List columns on target table of selected database using SQLMAP SQL Injection: ====
 
 Now we need to list all the columns on target table user_info of clemcoindustries database using SQLMAP SQL Injection. SQLMAP SQL Injection makes it really easy, run the following command:
 
@@ -173,9 +174,10 @@ This returns 5 entries from target table user_info of clemcoindustries database.
 
 This is exactly what we are looking for … target table user_login and user_password .
 
-img sqli-4
+{{:cookbook:web:sqli-4.jpg|}}
 
-== Step 5: List usernames from target columns of target table of selected database using SQLMAP SQL Injection: ==
+
+==== Step 5: List usernames from target columns of target table of selected database using SQLMAP SQL Injection: ====
 
 SQLMAP SQL Injection makes is Easy! Just run the following command again:
 
@@ -188,11 +190,11 @@ Guess what, we now have the username from the database:
 [10:58:40] [INFO] analyzing table dump for possible password hashes
 </code>
 
-img sqli-5
+{{:cookbook:web:sqli-5.jpg|}}
 
 Almost there, we now only need the password to for this user.. Next shows just that..
 
-== Step 6: Extract password from target columns of target table of selected database using SQLMAP SQL Injection: ==
+=== Step 6: Extract password from target columns of target table of selected database using SQLMAP SQL Injection: ===
 
 You’re probably getting used to on how to use SQLMAP SQL Injection tool. Use the following command to extract password for the user.
 
@@ -214,7 +216,7 @@ Table: user_info
 +---------------+
 </code>
 
-img sqli-6
+{{:cookbook:web:sqli-6.jpg|}}
 
 But hang on, this password looks funny. This can’t be someone’s password.. Someone who leaves their website vulnerable like that just can’t have a password like that.
 
@@ -224,28 +226,27 @@ I have covered how to decrypt password extensively on this Cracking MD5, phpBB, 
 
 I will cover it in short here but you should really learn how to use hashcat.
 
-=== Step 7: Cracking password: ===
+==== Step 7: Cracking password: ====
 
 So the hashed password is 24iYBc17xK0e. . How do you know what type of hash is that?
 
-== 1.Identify Hash type: ==
+=== 1.Identify Hash type: ===
 
 Luckily, Kali Linux provides a nice tool and we can use that to identify which type of hash is this. In command line type in the following command and on prompt paste the hash value:
 
 <code>hash-identifier</code>
 
-sqli-7
+{{:cookbook:web:sqli-7.jpg|}}
 
 Excellent. So this is DES(Unix) hash.
 
-== 2.Crack HASH using cudahashcat: ==
+=== 2.Crack HASH using cudahashcat: ===
 
 First of all I need to know which code to use for DES hashes. So let’s check that
 
 <code>cudahashcat --help | grep DES</code>
 
-img sqli-8
-
+{{:cookbook:web:sqli-8.jpg|}}
 
 So it’s either 1500 or 3100. But it was a MYSQL Database, so it must be 1500.
 
@@ -253,7 +254,7 @@ I saved the hash value 24iYBc17xK0e. in DES.hash file. Following is the command 
 
 <code>cudahashcat -m 1500 -a 0 /root/sql/DES.hash /root/sql/rockyou.txt</code>
 
-img sqli-9
+{{:cookbook:web:sqli-9.jpg|}}
 
 Interesting find: Usual Hashcat was unable to determine the code for DES hash. (not in it’s help menu). Howeverm both cudaHashcat and oclHashcat found and cracked the key.
 

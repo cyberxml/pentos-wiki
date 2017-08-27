@@ -44,3 +44,7 @@
 1503799731	127.0.0.1	E	navigationmenu	admin			39
 1503800351	127.0.0.1	C	cookbook:web:sqlmap	admin	created		12986
 1503800430	127.0.0.1	E	cookbook:web:sqlmap	admin			-48
+1503801796	127.0.0.1	E	cookbook:web:sqlmap	admin			201
+1503802128	127.0.0.1	E	cookbook:web:sqlmap	admin			-32
+1503802164	127.0.0.1	E	cookbook:web:sqlmap	admin			19
+1503802293	127.0.0.1	E	cookbook:web:sqlmap	admin			16
