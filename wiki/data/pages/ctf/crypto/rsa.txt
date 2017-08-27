@@ -1,0 +1,34 @@
+====== RSA ======
+
+===== public key =====
+directly factor for small key size: factordb and/or factor program
+
+Fermat's factoring
+
+===== p,q =====
+use //rsatools// to calculate d and public and private keys
+
+use 'd' directly with non-padded encyrypted data
+
+===== n,e =====
+use //rsatools// to calculate d and public and private keys
+
+use 'd' directly with non-padded encyrypted data
+
+===== very large or very small d =====
+Weiner's attack
+
+https://github.com/DonnchaC/rsa-wiener-attack
+
+===== multiple messages =====
+GCD and/or Chinese Theorem (multiplied mod)
+
+===== References =====
+http://www.loyalty.org/~schoen/rsa/
+
+https://ctftime.org/writeup/3621
+
+https://github.com/Ganapati/RsaCtfTool
+
+https://www.quaxio.com/exploring_three_weaknesses_in_rsa/
+

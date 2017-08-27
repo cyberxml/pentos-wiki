@@ -1,0 +1,17 @@
+a:2:{s:7:"current";a:8:{s:4:"date";a:2:{s:7:"created";i:1503797865;s:8:"modified";i:1503797865;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503797865;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"C";s:2:"id";s:14:"ctf:crypto:rsa";s:4:"user";s:5:"admin";s:3:"sum";s:7:"created";s:5:"extra";s:0:"";s:10:"sizechange";i:755;}s:5:"title";s:3:"RSA";s:11:"description";a:2:{s:15:"tableofcontents";a:7:{i:0;a:4:{s:3:"hid";s:3:"rsa";s:5:"title";s:3:"RSA";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:10:"public_key";s:5:"title";s:10:"public key";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:3:"p_q";s:5:"title";s:3:"p,q";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:3:"n_e";s:5:"title";s:3:"n,e";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:4;a:4:{s:3:"hid";s:26:"very_large_or_very_small_d";s:5:"title";s:26:"very large or very small d";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:5;a:4:{s:3:"hid";s:17:"multiple_messages";s:5:"title";s:17:"multiple messages";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:6;a:4:{s:3:"hid";s:10:"references";s:5:"title";s:10:"References";s:4:"type";s:2:"ul";s:5:"level";i:2;}}s:8:"abstract";s:277:"RSA
+
+public key
+
+directly factor for small key size: factordb and/or factor program
+
+Fermat's factoring
+
+p,q
+
+use rsatools to calculate d and public and private keys
+
+use 'd' directly with non-padded encyrypted data
+
+n,e
+
+use rsatools to calculate d and public and private keys";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:4:{s:4:"date";a:1:{s:7:"created";i:1503797865;}s:7:"creator";s:13:"Administrator";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1503797865;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"C";s:2:"id";s:14:"ctf:crypto:rsa";s:4:"user";s:5:"admin";s:3:"sum";s:7:"created";s:5:"extra";s:0:"";s:10:"sizechange";i:755;}}}

@@ -15,6 +15,9 @@
         * [[cookbook:infil:ssh_port_forward|SSH -L Port Forwarding]]
       * [[cookbook:infil:windows|Windows]]
     * [[cookbook:enum:enum|Enumeration]]
+      * [[cookbook:enum:linux|Linux]]
+      * [[cookbook:enum:windows|Windows]]
+        * [[cookbook:enum:windows:whoami|Whoami (groups)]]
     * [[cookbook:privs:privs|Escalation]]
     * [[cookbook:web:web|Web]]
     * [[cookbook:db:db|Database]]
@@ -46,3 +49,8 @@
       * [[sdr:aircrack|aircrack-ng]]
         * [[sdr:aircrack:airomon|airomon]] Monitor 805.11
   * [[metasploit2:metasploit2|Metasploitable2]]
+  * [[ctf:ctf|CTF]]
+    * [[ctf:crypto|Crypto]]
+      * [[ctf:crypto:rsa|RSA]]
+    * [[re:re|Reverse Engineering]]
+      * [[ctf:re:re|Strings]]

@@ -1,0 +1,10 @@
+====== Strings ======
+
+===== Example Usage =====
+
+After downloading almost any RE file, you should run strings on it
+
+<code>
+strings some.file > some.file.str
+grep some-flag some.file.str
+</code>

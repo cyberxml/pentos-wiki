@@ -1,0 +1,14 @@
+====== Introduction ======
+
+On windows, you can find your user id and group memberships with the //whoami// command
+
+===== Example Usage =====
+<code>
+> whoami
+ad\user
+</code>
+
+<code>
+> whoami /groups
+... list of groups ...
+</code>
