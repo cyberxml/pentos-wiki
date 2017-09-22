@@ -48,3 +48,11 @@
 1503802128	127.0.0.1	E	cookbook:web:sqlmap	admin			-32
 1503802164	127.0.0.1	E	cookbook:web:sqlmap	admin			19
 1503802293	127.0.0.1	E	cookbook:web:sqlmap	admin			16
+1503848159	127.0.0.1	E	navigationmenu	admin			298
+1503848171	127.0.0.1	D	ctf:re:re	admin	removed		-195
+1503848185	127.0.0.1	E	navigationmenu	admin			5
+1503848194	127.0.0.1	C	ctf:re:strings	admin	created		195
+1503848592	127.0.0.1	C	programming:python	admin	created		1360
+1503848636	127.0.0.1	E	navigationmenu	admin			0
+1503848777	127.0.0.1	E	navigationmenu	admin			69
+1503848795	127.0.0.1	E	navigationmenu	admin			-1

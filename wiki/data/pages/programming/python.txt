@@ -1,0 +1,29 @@
+====== Python ======
+
+===== REPL Shell =====
+
+Start a shell by typing: //python//
+
+Exit the shell by typing: //quit()//
+
+===== Deobfuscation =====
+
+===== Reversing =====
+
+==== uncompyle2 ====
+
+'uncompyle2' converts Python byte-code back into equivalent Python source code. It accepts byte-code from Python version 2.5 to 2.7. Additionally, it will only run on Python 2.7.
+
+The generated source is very readable: docstrings, lists, tuples and hashes get pretty-printed.
+
+https://github.com/Mysterie/uncompyle2
+
+==== pyREtic ====
+
+Reverse Engineer Obfuscated Python Bytecode This toolkit allows you to take a object in memory back to source code, without needing access to the bytecode directly on disk. This can be useful if the applictions pyc's on disk are obfuscated in one of many ways.
+
+==== dis ====
+
+The dis module supports the analysis of CPython bytecode by disassembling it. The CPython bytecode which this module takes as an input is defined in the file Include/opcode.h and used by the compiler and the interpreter. CPython implementation detail: Bytecode is an implementation detail of the CPython interpreter! No guarantees are made that bytecode will not be added, removed, or changed between versions of Python. Use of this module should not be considered to work across Python VMs or Python releases.
+
+https://docs.python.org/2/library/dis.html
